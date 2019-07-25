@@ -10,7 +10,6 @@ const LOAD_STATE = {
   LOADING: 'LOADING'
 };
 
-const apiKey='bcf19d759fd14f3e8c848c4fa6233cae'
 const URL = 'https://newsapi.org/v2/top-headlines?apiKey=bcf19d759fd14f3e8c848c4fa6233cae'
 class App extends Component {
   state = {
@@ -40,16 +39,24 @@ fetchNews = () =>{
   }
   axios.get(url,options).then(response => response.data)
   .then((data) => {
-    this.setState({ users: data })
-    console.log(this.state.users)
+    this.setState({ 
+      news: data ,
+      loadState: LOAD_STATE.SUCCESS
+    })
    })
+   .catch(() => {
+    this.setState({ loadState: LOAD_STATE.ERROR });
+  });
 }
-  
+
   render(){
   return (
     <div className="App">
 <HeaderLink />
-<News />
+{this.state.loadState === LOAD_STATE.LOADING
+  ? <div className="loader"></div>
+  : <News data={this.state.news} />  
+}
     </div>
   );
 }
