@@ -1,10 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+.navs{
+    font-family: 'Quicksand', sans-serif;
+}
 .navbar img{
     width: 25px;
     background: white;
     color: black;
     margin-right: 10px;
 }
-
+.mr-auto a {
+    color: black;
+    font-weight: bold;
+}
 #logo img{
     width: 40px;
 }
@@ -14,11 +21,8 @@
    margin-left: -10px;
 }
 
-.quick-links .container{
-   float: right;
-    display: flex;
-}
 .justify-content-center a{
     color: black;
+    font-weight: bold;
 }
 

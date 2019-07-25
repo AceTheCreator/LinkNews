@@ -8,7 +8,7 @@ class Header extends Component {
     render(){
         return(
             <div className='navs'>
-<Navbar collapseOnSelect expand="lg"  variant="light">
+<Navbar collapseOnSelect expand="lg">
     <Container>
   <Navbar.Toggle id='toggle'/>
   <Navbar.Collapse id="responsive-navbar-nav">
@@ -22,19 +22,17 @@ class Header extends Component {
   <img src={search} alt='search' />
   </Container>
 </Navbar>
-<Nav className="justify-content-center" activeKey="/home" variant="pills">
-    <Nav.Item>
-      <Nav.Link href="/home">Tech</Nav.Link>
-    </Nav.Item>
-    <Nav.Item>
-      <Nav.Link eventKey="link-1">Business</Nav.Link>
-    </Nav.Item>
-    <Nav.Item>
-      <Nav.Link eventKey="link-2">Finance</Nav.Link>
-    </Nav.Item>
-    <Nav.Item>
-    </Nav.Item>
-  </Nav>
+<Nav className="justify-content-center" variant="pills" style={{borderRadius:'0px'}} defaultActiveKey="/home">
+  <Nav.Item>
+    <Nav.Link href="/home">Tech</Nav.Link>
+  </Nav.Item>
+  <Nav.Item>
+    <Nav.Link eventKey="link-1">Science</Nav.Link>
+  </Nav.Item>
+  <Nav.Item>
+  <Nav.Link eventKey="link-2">Business</Nav.Link>
+  </Nav.Item>
+</Nav>
 </div>
         )
     }
