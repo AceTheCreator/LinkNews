@@ -58,18 +58,19 @@
             border-radius: 20px;
             background-color: rgb(187, 187, 187);
           }
-          .content{
+          .title{
               margin-left: 5%;
               max-width: 85%;
           }
-          .content h3{
-              font-size: 20px;
-          }
     }
-    .content{
+    .title{
         text-align: center;
-    }
-    .content h3{
         font-size: 20px;
         font-weight: bold;
     }
+    .read-more{
+      border-radius: 20px;
+      background: transparent;
+      color: black;
+    }
+    

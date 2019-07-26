@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import HeaderLink from './Component/Header';
 import News from './Component/News';
+import Pagination from './Component/Pagination';
 import './App.css';
 import axios from 'axios';
 
@@ -20,17 +21,18 @@ class App extends Component {
     country:'us',
     totalResults: 0,
     pageSize: 50,
-    page: 1,
+    currentPage: 1,
 }
 
 componentDidMount(){
-  this.fetchNews()
+  this.fetchNews(this.state.currentPage)
 }
-fetchNews = () =>{
+fetchNews = (page) =>{
   const url = `${URL}`;
   const {country, pageSize, category} = this.state;
   const options = {
     params:{
+      page:page,
       country:country,
       pageSize:pageSize,
       category: category
@@ -41,7 +43,9 @@ fetchNews = () =>{
   .then((data) => {
     this.setState({ 
       news: data ,
-      loadState: LOAD_STATE.SUCCESS
+      loadState: LOAD_STATE.SUCCESS,
+      totalResults: data.totalResults,
+      currentPage: page,
     })
    })
    .catch(() => {
@@ -53,10 +57,17 @@ fetchNews = () =>{
   return (
     <div className="App">
 <HeaderLink />
+
 {this.state.loadState === LOAD_STATE.LOADING
   ? <div className="loader"></div>
   : <News data={this.state.news} />  
 }
+<Pagination
+          current={this.state.currentPage}
+          total={this.state.totalResults} 
+          pageSize={this.state.pageSize} 
+          onPageChanged={this.fetchNews}
+        />
     </div>
   );
 }
