@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import HeaderLink from './Component/Header';
 import News from './Component/News';
 import Pagination from './Component/Pagination';
+import QuickLinks from './Component/QuickLinks';
 import './App.css';
 import axios from 'axios';
 
@@ -53,10 +54,19 @@ fetchNews = (page) =>{
   });
 }
 
+onCategoryChange = () => {
+  this.setState({
+    category: 'science'
+  })
+}
+
   render(){
   return (
     <div className="App">
 <HeaderLink />
+<QuickLinks
+cat = {this.onCategoryChange}
+ />
 
 {this.state.loadState === LOAD_STATE.LOADING
   ? <div className="loader"></div>
