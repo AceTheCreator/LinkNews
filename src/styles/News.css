@@ -73,4 +73,6 @@
       background: transparent;
       color: black;
     }
-    
+    .author img{
+      width: 25px;
+    }

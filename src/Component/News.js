@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../styles/News.css';
 import {Card, Button} from 'react-bootstrap';
+import FeedModal from './Modal';
 
 
 const News = ({ data }) => {
@@ -14,6 +15,10 @@ const News = ({ data }) => {
   }
 
   const NewsList = ({article}) =>{
+    const [modalShow, setModalShow] = React.useState(false);
+    const ts = new Date(`${article.publishedAt}`)
+    const date = ts.toDateString();
+    let author = article.author ? article.author : 'Unknown'
         return(
             <div className='news'>
                 <div className='container'>
@@ -24,9 +29,15 @@ const News = ({ data }) => {
       {article.title}
       </Card.Text>
       <Card.Text className='content'>
-        {article.description}
+        {article.description}<br />
+        posted by {author} on {date}
       </Card.Text>
-      <Button className='read-more'>Read More</Button>
+      <Button className='read-more' onClick={() => setModalShow(true)}>Read More</Button>
+      <FeedModal
+      content ={article}
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
     </Card.Body>
   </Card>
                 </div>
