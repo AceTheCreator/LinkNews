@@ -37,8 +37,8 @@
     @keyframes spinner {
       to { transform: rotate(1turn); }
     }
-.grid  h4{
- margin-left: 23%;
+.grid  h6{
+ margin-left: 26%;
 }
 
     .news{
@@ -52,7 +52,7 @@
         height: auto;  
       }
     @media only screen and (min-width: 992px){
-      .grid  h4{
+      .grid  h6{
         margin-left: 40%;
        }
         .card{

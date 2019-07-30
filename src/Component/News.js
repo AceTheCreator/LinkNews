@@ -1,12 +1,12 @@
-import React, {useState, Component} from 'react';
+import React, { Component} from 'react';
 import '../styles/News.css';
-import {Card, Button,Container, Navbar, Nav} from 'react-bootstrap';
-import FeedModal from './Modal';
+import {Container, Navbar, Nav} from 'react-bootstrap';
 import Pagination from './Pagination';
 import QuickLinks from './QuickLinks';
 import request from 'superagent';
 import search from '../Component/static/search.png';
 import logo from '../Component/static/logo.png';
+import NewsList from './NewsList';
 
 const LOAD_STATE = {
   SUCCESS: 'SUCCESS',
@@ -53,10 +53,17 @@ fetchNews = (page) =>{
 );
 }
 
-onChange = e => {
+onChangeSport = e => {
   this.fetchNews(this.state.currentPage)
   this.setState({
     category: 'sport'
+  })
+  console.log('state changed')
+}
+onChangeBusiness = e => {
+  this.fetchNews(this.state.currentPage)
+  this.setState({
+    category: 'business'
   })
   console.log('state changed')
 }
@@ -68,8 +75,8 @@ render(){
   <Navbar.Toggle id='toggle'/>
   <Navbar.Collapse id="responsive-navbar-nav">
   <Nav className="mr-auto">
-      <Nav.Link href="All"><div onClick={() => this.props.onRouteChange('all')}>All</div></Nav.Link>
-      <Nav.Link href="Sources">Sources</Nav.Link>
+    <Nav.Link><div>Trending</div></Nav.Link>
+      <Nav.Link><div onClick={() => this.props.onRouteChange('all')}>All</div></Nav.Link>
     </Nav>
   </Navbar.Collapse>
   <Navbar.Brand href="#home" id='logo'><img src={logo} alt='logo' /></Navbar.Brand>
@@ -77,7 +84,8 @@ render(){
   </Container>
 </Navbar>
       <QuickLinks
-onClick = {this.onChange}
+sport = {this.onChangeSport}
+business = {this.onChangeBusiness}
  />
 
 {this.state.loadState === LOAD_STATE.LOADING
@@ -102,42 +110,11 @@ const News = ({ data }) => {
       <div className="grid">
         { items }
         <Container>
-        <h4>{data.totalResults} news discovered</h4>
+        <h6>{data.totalResults} news discovered</h6>
         </Container>
       </div>
     )
   }
   
-  const NewsList = ({article}) =>{
-    const [modalShow, setModalShow] = useState(false);
-    const ts = new Date(`${article.publishedAt}`)
-    const date = ts.toDateString();
-    let author = article.author ? article.author : 'Unknown'
-    let photo = article.urlToImage ? article.urlToImage : 'https://www.reynoldsam.com/wordpress/wp-content/themes/ram/_images/nophoto.jpg';
-        return(
-            <div className='news'>
-                <div className='container'>
-                <Card className='card'>
-    <Card.Img variant="top" src={photo} className='image'/>
-    <Card.Body>
-      <Card.Text className='title'>
-      {article.title}
-      </Card.Text>
-      <Card.Text className='content'>
-        {article.description}<br />
-        posted by {author} on {date}
-      </Card.Text>
-      <Button className='read-more' onClick={() => setModalShow(true)}>Read More</Button>
-      <FeedModal
-      content ={article}
-        show={modalShow}
-        onHide={() => setModalShow(false)}
-      />
-    </Card.Body>
-  </Card>
-                </div>
-            </div>
-        )
-    }
 
 export default Trending;

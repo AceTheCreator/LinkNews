@@ -12,10 +12,10 @@ class QuickLinks extends Component {
 <Nav.Item>
   <Nav.Link href="/home">Tech</Nav.Link>
 </Nav.Item>
-<Nav.Item onClick={this.props.onClick}>
+<Nav.Item onClick={this.props.sport}>
   <Nav.Link eventKey="link-1">Sport</Nav.Link>
 </Nav.Item>
-<Nav.Item>
+<Nav.Item onClick={this.props.business}>
 <Nav.Link eventKey="link-2">Business</Nav.Link>
 </Nav.Item>
 </Nav>
