@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import '../styles/Pagination.css';
+import {Container} from 'react-bootstrap';
 
 class Pagination extends Component {  
     pages() {
@@ -56,6 +57,7 @@ class Pagination extends Component {
     render() {
       return (
         <div className="pagination">
+      
           <div className="pagination__left">
             <a href="#" className={!this.hasPrev() ? 'hidden': ''}
               onClick={e => this.changePage(this.prevPage())}
@@ -92,6 +94,7 @@ class Pagination extends Component {
               onClick={e => this.changePage(this.nextPage())}
             >Next</a>
           </div>
+        
         </div>
       );    
     }
