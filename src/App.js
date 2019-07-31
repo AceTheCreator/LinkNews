@@ -13,14 +13,6 @@ class App extends Component {
       this.setState({route:route})
   }
 
-  shouldComponentUpdate(nextProps, nextState){
-    if(this.state.route !== nextState.route){
-        return true
-    }
-    return false
-    
-}
-
   render(){
     
     if(this.state.route === 'trending'){

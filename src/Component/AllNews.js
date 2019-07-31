@@ -46,7 +46,6 @@ fetchNews = (page) =>{
              totalResults : response.body.totalResults,
              currentPage : page
              });
-          console.log(this.state.news)
       } else {
           console.log('There was an error fetching from News.org', error);
       }
@@ -59,14 +58,12 @@ onChangeSport = e => {
     this.setState({
       q: {sport}
     })
-    console.log('state changed')
   }
   onChangeBusiness = e => {
     this.fetchNews(this.state.currentPage)
     this.setState({
       q: {business}
     })
-    console.log('state changed')
   }
 
   onQueryChange = e => {

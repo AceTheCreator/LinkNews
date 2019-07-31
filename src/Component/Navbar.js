@@ -8,7 +8,6 @@ const all  = 'All'
 
 class Navigation extends Component {
     render(){
-        console.log('Navbar')
         return(
             <Navbar sticky="top"  collapseOnSelect expand="lg" className='nav'>
             <Container>

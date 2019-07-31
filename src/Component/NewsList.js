@@ -4,7 +4,6 @@ import FeedModal from './Modal'
 
 
 const NewsList = ({article}) =>{
-  console.log('newsList')
     const [modalShow, setModalShow] = useState(false);
     const ts = new Date(`${article.publishedAt}`)
     const date = ts.toDateString();

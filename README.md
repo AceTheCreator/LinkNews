@@ -1,7 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ##LinkNews
-LinkNews is a javascript project built upon react and news.org api to give you latest new feed.
+[LinkNews](https://helegbedey.github.io/LinkNews/) is a javascript project built upon react and news.org api to give you latest new feed.
 
 ## Available Scripts
 

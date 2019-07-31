@@ -54,7 +54,6 @@ fetchNews = (page) =>{
              totalResults : response.body.totalResults,
              currentPage : page
              });
-          console.log(this.state.news)
       } else {
           console.log('There was an error fetching from News.org', error);
       }
@@ -67,14 +66,12 @@ onChangeSport = e => {
   this.setState({
     category: {sport}
   })
-  console.log('state changed')
 }
 onChangeBusiness = e => {
   this.fetchNews(this.state.currentPage)
   this.setState({
     category: {business}
   })
-  console.log('state changed')
 }
 onQueryChange = e => {
   this.setState({
@@ -82,7 +79,6 @@ onQueryChange = e => {
   })
 }
 render(){
-  console.log('trending')
   return (
     <div className="Trending">
       <Navbar
