@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/LinkNews/static/css/main.4cf78465.chunk.css",
+    "main.css": "/LinkNews/static/css/main.c3756073.chunk.css",
     "main.js": "/LinkNews/static/js/main.becee743.chunk.js",
     "main.js.map": "/LinkNews/static/js/main.becee743.chunk.js.map",
     "runtime~main.js": "/LinkNews/static/js/runtime~main.ce0dbacf.js",
@@ -10,9 +10,9 @@
     "static/js/3.8ecfed06.chunk.js": "/LinkNews/static/js/3.8ecfed06.chunk.js",
     "static/js/3.8ecfed06.chunk.js.map": "/LinkNews/static/js/3.8ecfed06.chunk.js.map",
     "index.html": "/LinkNews/index.html",
-    "precache-manifest.9089d06105e9555b7ae127d3e440268b.js": "/LinkNews/precache-manifest.9089d06105e9555b7ae127d3e440268b.js",
+    "precache-manifest.27ec39e43b427ff0ccc30d3fb2d23fa1.js": "/LinkNews/precache-manifest.27ec39e43b427ff0ccc30d3fb2d23fa1.js",
     "service-worker.js": "/LinkNews/service-worker.js",
-    "static/css/main.4cf78465.chunk.css.map": "/LinkNews/static/css/main.4cf78465.chunk.css.map",
+    "static/css/main.c3756073.chunk.css.map": "/LinkNews/static/css/main.c3756073.chunk.css.map",
     "static/media/logo.png": "/LinkNews/static/media/logo.abe77198.png"
   }
 }
