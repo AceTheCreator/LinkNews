@@ -73,8 +73,8 @@ render(){
   <Navbar.Toggle id='toggle'/>
   <Navbar.Collapse id="responsive-navbar-nav">
   <Nav className="mr-auto">
-    <Nav.Link><div>Trending</div></Nav.Link>
-      <Nav.Link><div onClick={() => this.props.onRouteChange('all')}>All</div></Nav.Link>
+    <Nav.Link><div onClick={() => this.props.onRouteChange('trending')}>Trending</div></Nav.Link>
+      <Nav.Link><div>All</div></Nav.Link>
     </Nav>
   </Navbar.Collapse>
   <Navbar.Brand href="#home" id='logo'><img src={logo} alt='logo' /></Navbar.Brand>

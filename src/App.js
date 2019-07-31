@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
-import Trending from './Component/News';
+import Trending from './Component/TrendingNews';
 import AsyncComponent from './Component/AsyncComponent';
 
 class App extends Component {
@@ -18,7 +18,7 @@ class App extends Component {
     if(this.state.route === 'trending'){
      return<Trending onRouteChange = {this.onRouteChange} />
     }else if (this.state.route === 'all'){
-      const AsyncAllNews = AsyncComponent(()=> import('./Component/All'))
+      const AsyncAllNews = AsyncComponent(()=> import('./Component/AllNews'))
       return <AsyncAllNews onRouteChange = {this.onRouteChange} />
     }
   }
