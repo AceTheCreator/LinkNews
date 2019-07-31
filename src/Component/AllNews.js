@@ -5,6 +5,7 @@ import Pagination from './Pagination';
 import QuickLinks from './QuickLinks';
 import request from 'superagent';
 import Navbar from './Navbar';
+import key from '.././Config';
 
 import NewsList from './NewsList';
 
@@ -16,7 +17,7 @@ const LOAD_STATE = {
 const discovered = 'news discovered';
 const sport = 'sport';
 const business = 'business';
-const URL = 'https://newsapi.org/v2/everything?apiKey=bcf19d759fd14f3e8c848c4fa6233cae'
+const URL = `https://newsapi.org/v2/everything?apiKey=${key}`
 class Trending extends Component {
   state = {
     news:[],
