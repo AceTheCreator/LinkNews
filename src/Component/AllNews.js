@@ -13,6 +13,9 @@ const LOAD_STATE = {
   ERROR: 'ERROR',
   LOADING: 'LOADING'
 };
+const discovered = 'news discovered';
+const sport = 'sport';
+const business = 'business';
 
 const URL = 'https://newsapi.org/v2/everything?apiKey=bcf19d759fd14f3e8c848c4fa6233cae'
 class Trending extends Component {
@@ -54,14 +57,14 @@ fetchNews = (page) =>{
 onChangeSport = e => {
     this.fetchNews(this.state.currentPage)
     this.setState({
-      q: 'sport'
+      q: {sport}
     })
     console.log('state changed')
   }
   onChangeBusiness = e => {
     this.fetchNews(this.state.currentPage)
     this.setState({
-      q: 'business'
+      q: {business}
     })
     console.log('state changed')
   }
@@ -107,7 +110,7 @@ const News = ({ data }) => {
       <div className="grid">
         { items }
         <Container>
-        <h6>{data.totalResults} news discovered</h6>
+        <h6>{data.totalResults} {discovered}</h6>
         </Container>
       </div>
     )

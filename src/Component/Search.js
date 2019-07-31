@@ -2,18 +2,20 @@ import React, {Component} from 'react';
 import '../styles/Search.css';
 import searchIcon from './static/search.png';
 
+const changeSearchField = 'Search';
+
 class Search extends Component{
     state = {
         iconShow : false
     }
-
+    
     HandleIcon = () =>{
        this.setState({
            iconShow : true
        })
     }
-
     render(){
+        console.log('Search')
         let icon;
         if(this.state.iconShow){
             icon =
@@ -21,7 +23,7 @@ class Search extends Component{
             <input
         className='search-input'
         type="text"
-        placeholder=" Search"
+        placeholder={changeSearchField}
         value = {this.props.query}
         onChange = {this.props.onQueryChange}
     

@@ -12,6 +12,9 @@ const LOAD_STATE = {
   ERROR: 'ERROR',
   LOADING: 'LOADING'
 };
+const discovered = 'news discovered';
+const sport = 'sport'
+const business = 'business'
 
 const URL = 'https://newsapi.org/v2/top-headlines?apiKey=bcf19d759fd14f3e8c848c4fa6233cae'
 class Trending extends Component {
@@ -28,6 +31,13 @@ class Trending extends Component {
 
 componentDidMount(){
   this.fetchNews(this.state.currentPage)
+}
+shouldComponentUpdate(nextProps, nextState){
+  if(this.props.news !== nextState.news){
+      return true
+  }
+  return false
+  
 }
 fetchNews = (page) =>{
   const url = URL;
@@ -55,14 +65,14 @@ fetchNews = (page) =>{
 onChangeSport = e => {
   this.fetchNews(this.state.currentPage)
   this.setState({
-    category: 'sport'
+    category: {sport}
   })
   console.log('state changed')
 }
 onChangeBusiness = e => {
   this.fetchNews(this.state.currentPage)
   this.setState({
-    category: 'business'
+    category: {business}
   })
   console.log('state changed')
 }
@@ -72,6 +82,7 @@ onQueryChange = e => {
   })
 }
 render(){
+  console.log('trending')
   return (
     <div className="Trending">
       <Navbar
@@ -107,7 +118,7 @@ const News = ({ data }) => {
       <div className="grid">
         { items }
         <Container>
-        <h6>{data.totalResults} news discovered</h6>
+        <h6>{data.totalResults} {discovered}</h6>
         </Container>
       </div>
     )
