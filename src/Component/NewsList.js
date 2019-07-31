@@ -14,7 +14,7 @@ const NewsList = ({article}) =>{
             <div className='news'>
                 <div className='container'>
                 <Card className='card'>
-                <Img  webp={photo} alt="I'm a webp image" className="card-img-top" />;
+                <Img  webp={photo} alt="news images" className="card-img-top" />;
     <Card.Body>
       <Card.Text className='title'>
       {article.title}

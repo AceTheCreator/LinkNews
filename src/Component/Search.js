@@ -20,6 +20,7 @@ class Search extends Component{
             icon =
             <form className='form' onSubmit={this.props.searchHandler}>
             <input
+            arial-label='search news'
         className='search-input'
         type="text"
         placeholder={changeSearchField}

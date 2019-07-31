@@ -10,7 +10,7 @@ class QuickLinks extends Component {
     return(
       <Nav className="justify-content-center" variant="pills" style={{borderRadius:'0px'}} defaultActiveKey="/home">
 <Nav.Item>
-  <Nav.Link href="/home">Tech</Nav.Link>
+  <Nav.Link href="/home" className='t'>Tech</Nav.Link>
 </Nav.Item>
 <Nav.Item onClick={this.props.sport}>
   <Nav.Link eventKey="link-1">Sport</Nav.Link>
