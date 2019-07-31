@@ -1,4 +1,4 @@
-import React, { Component} from 'react';
+import React, { Component, } from 'react';
 import '../styles/News.css';
 import {Container} from 'react-bootstrap';
 import Pagination from './Pagination';
@@ -16,7 +16,6 @@ const LOAD_STATE = {
 const discovered = 'news discovered';
 const sport = 'sport';
 const business = 'business';
-
 const URL = 'https://newsapi.org/v2/everything?apiKey=bcf19d759fd14f3e8c848c4fa6233cae'
 class Trending extends Component {
   state = {

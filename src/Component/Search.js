@@ -15,7 +15,6 @@ class Search extends Component{
        })
     }
     render(){
-        console.log('Search')
         let icon;
         if(this.state.iconShow){
             icon =

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {Card, Button} from 'react-bootstrap';
-import FeedModal from './Modal'
+import FeedModal from './Modal';
+import Img from 'react-webp-image';
 
 
 const NewsList = ({article}) =>{
@@ -13,7 +14,7 @@ const NewsList = ({article}) =>{
             <div className='news'>
                 <div className='container'>
                 <Card className='card'>
-    <Card.Img variant="top" src={photo} className='image'/>
+                <Img  webp={photo} alt="I'm a webp image" className="card-img-top" />;
     <Card.Body>
       <Card.Text className='title'>
       {article.title}
