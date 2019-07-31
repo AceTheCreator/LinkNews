@@ -1,11 +1,10 @@
 import React, { Component} from 'react';
 import '../styles/News.css';
-import {Container, Navbar, Nav} from 'react-bootstrap';
+import Navbar from './Navbar';
+import {Container} from 'react-bootstrap';
 import Pagination from './Pagination';
 import QuickLinks from './QuickLinks';
 import request from 'superagent';
-import search from '../Component/static/search.png';
-import logo from '../Component/static/logo.png';
 import NewsList from './NewsList';
 
 const LOAD_STATE = {
@@ -67,22 +66,20 @@ onChangeBusiness = e => {
   })
   console.log('state changed')
 }
+onQueryChange = e => {
+  this.setState({
+    category: e.target.value,
+  })
+}
 render(){
   return (
     <div className="Trending">
-    <Navbar sticky="top"  collapseOnSelect expand="lg" className='nav'>
-    <Container>
-  <Navbar.Toggle id='toggle'/>
-  <Navbar.Collapse id="responsive-navbar-nav">
-  <Nav className="mr-auto">
-    <Nav.Link><div>Trending</div></Nav.Link>
-      <Nav.Link><div onClick={() => this.props.onRouteChange('all')}>All</div></Nav.Link>
-    </Nav>
-  </Navbar.Collapse>
-  <Navbar.Brand href="#home" id='logo'><img src={logo} alt='logo' /></Navbar.Brand>
-  <img src={search} alt='search' />
-  </Container>
-</Navbar>
+      <Navbar
+      onRouteChange = {this.props.onRouteChange}
+      searchHandler = {()=>this.fetchNews(this.state.currentPage)}
+      onQueryChange = {this.onQueryChange}
+      query = {this.state.category}
+       />
       <QuickLinks
 sport = {this.onChangeSport}
 business = {this.onChangeBusiness}
